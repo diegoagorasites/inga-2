@@ -1,0 +1,15 @@
+{
+  "name": "rss-maringa",
+  "version": "1.0.0",
+  "description": "Gerador de feed RSS para o site da Prefeitura de Maringá",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsdom": "^24.0.0",
+    "puppeteer": "^22.8.2"
+  }
+}
