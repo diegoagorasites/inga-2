@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer';
 import { JSDOM } from 'jsdom';
 
 const app = express();
-const PORT = process.env.PORT; // <<--- CORRETO para o Render
+const PORT = process.env.PORT || 10000;
 
 app.get('/', async (req, res) => {
   try {
