@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer';
 import { JSDOM } from 'jsdom';
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT; // <<--- CORRETO para o Render
 
 app.get('/', async (req, res) => {
   try {
@@ -55,7 +55,6 @@ function formatarDataRSS(dataBr) {
   const partes = dataBr.split('/');
   if (partes.length === 3) {
     const [dia, mes, ano] = partes;
-    // Cria data no formato ISO para evitar timezone errado
     const data = new Date(`${ano}-${mes}-${dia}T00:00:00Z`);
     if (!isNaN(data)) return data.toUTCString();
   }
@@ -88,5 +87,5 @@ function gerarRSS(noticias) {
 }
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Servidor rodando: http://localhost:${PORT}`);
+  console.log(`✅ Servidor rodando na porta: ${PORT}`);
 });

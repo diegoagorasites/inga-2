@@ -33,8 +33,5 @@ COPY package*.json ./
 RUN npm install --omit=dev
 COPY . .
 
-# Expõe a porta (Render usa o PORT env)
-EXPOSE 10000
-
 # Comando para rodar
 CMD ["npm", "start"]
